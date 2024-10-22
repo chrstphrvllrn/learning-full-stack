@@ -47,6 +47,8 @@ Password for 'https://github.com/chrstphrvllrn/Learning/': generated token here`
             <p>git status</p>
             <h1>Adding the project to the existing empty repository</h1>
             <CodeBlock>git remote add origin https://github.com/USERNAME/REPOSITORY-NAME.git</CodeBlock>
+            <p>Verify that the remote URL was added with your new repository name. </p>
+            <CodeBlock>git remote -v</CodeBlock>
             now you can proceed with the git add. && git commit -m 'message' %% git push origin main    
             <h1>Usual GitIgnore</h1>
             <CodeBlock>{`# Node.js dependencies
@@ -81,6 +83,16 @@ Thumbs.db
 .vscode/
 .idea/
 `}</CodeBlock>
+<h1>You're still encountering the non-fast-forward error because your local branch is behind the remote branch. This typically happens when there are changes on the remote branch that you haven't pulled down yet.</h1>
+<CodeBlock>{`git pull origin main`}</CodeBlock>
+<CodeBlock>{`git add .`}</CodeBlock>
+<CodeBlock>{`git commit -m "Merge remote changes"`}</CodeBlock>
+<CodeBlock>{`git push origin main`}</CodeBlock>
+alternative: Force Push (Not Recommended)
+<CodeBlock>{`git push --force origin main`}</CodeBlock>
+
+
+
 
         </div>
     )
