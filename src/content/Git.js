@@ -5,7 +5,11 @@ function Git() {
         <div>
             <h1>Each repo should have separate deploy keys, do not override the existing id_ed25519.pub</h1>
             <CodeBlock></CodeBlock>
+            <h1>. If you have multiple SSH keys, Git might be using the wrong key. You can check which key Git is using with:
 
+</h1>
+        <CodeBlock>ssh -T git@github.com</CodeBlock>
+        <p>If you want Git to use a specific key, you can set up an SSH config file (~/.ssh/config) to ensure it uses the correct one for the repository.</p>
             https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
             <h1 className='text-xl'>How to push the update</h1>
             <CodeBlock language='command-line'>{`How to push the update to github
