@@ -131,6 +131,7 @@ Thumbs.db
 .idea/
 `}</CodeBlock>
 <h1>You're still encountering the non-fast-forward error because your local branch is behind the remote branch. This typically happens when there are changes on the remote branch that you haven't pulled down yet.</h1>
+<CodeBlock>{`git fetch origin`}</CodeBlock>
 <CodeBlock>{`git pull origin main`}</CodeBlock>
 <CodeBlock>{`git add .`}</CodeBlock>
 <CodeBlock>{`git commit -m "Merge remote changes"`}</CodeBlock>
