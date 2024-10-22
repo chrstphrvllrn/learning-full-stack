@@ -43,6 +43,7 @@ Password for 'https://github.com/chrstphrvllrn/Learning/': generated token here`
             <h1>How to remove a Git from a project?</h1>
             <CodeBlock>rm -rf .git*</CodeBlock>
             source: https://www.scaler.com/topics/git/remove-git-from-project/
+            <h1>To see the status</h1>
             <p>git status</p>
             <h1>Adding the project to the existing empty repository</h1>
             <CodeBlock>git remote add origin https://github.com/USERNAME/REPOSITORY-NAME.git</CodeBlock>
