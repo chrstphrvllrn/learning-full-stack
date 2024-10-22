@@ -131,6 +131,13 @@ Thumbs.db
 .idea/
 `}</CodeBlock>
 <h1>You're still encountering the non-fast-forward error because your local branch is behind the remote branch. This typically happens when there are changes on the remote branch that you haven't pulled down yet.</h1>
+<p>To github-fourth-account:chrstphrvllrn/PendukoBeatsServer.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'github-fourth-account:chrstphrvllrn/PendukoBeatsServer.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.</p>
 <CodeBlock>{`git fetch origin`}</CodeBlock>
 <CodeBlock>{`git pull origin main`}</CodeBlock>
 <CodeBlock>{`git add .`}</CodeBlock>
