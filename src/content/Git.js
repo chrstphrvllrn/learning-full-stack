@@ -6,9 +6,43 @@ function Git() {
             <h1>Each repo should have separate deploy keys, do not override the existing id_ed25519.pub</h1>
             <CodeBlock></CodeBlock>
             <h1>. If you have multiple SSH keys, Git might be using the wrong key. You can check which key Git is using with:
+            <h1>Setting Up Multiple Keys for Different Repositories, Here's an example of how you can set up your ~/.ssh/config file with different SSH keys for various Git repositories, using specific host entries for each:</h1>
+            <p>
+            # Default GitHub key
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519
 
+# Another SSH key for a different GitHub repo
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_2
+
+# Another SSH key for a different GitHub repo
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_3
+
+# Another SSH key for a different GitHub repo
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_4
+
+            </p>
+            
+            <CodeBlock>chmod 600 ~/.ssh/id_ed25519
+chmod 600 ~/.ssh/id_ed25519_2
+chmod 600 ~/.ssh/id_ed25519_3
+chmod 600 ~/.ssh/id_ed25519_4</CodeBlock>
 </h1>
+<CodeBlock>ssh -T git@github.com</CodeBlock>
         <CodeBlock>ssh -T git@github.com</CodeBlock>
+        <CodeBlock>Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+        </CodeBlock>
         <p>If you want Git to use a specific key, you can set up an SSH config file (~/.ssh/config) to ensure it uses the correct one for the repository.</p>
             https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
             <h1 className='text-xl'>How to push the update</h1>
