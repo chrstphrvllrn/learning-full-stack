@@ -4,11 +4,14 @@ function Git() {
     return (
         <div>
             <h1>Each repo should have separate deploy keys, do not override the existing id_ed25519.pub</h1>
-            <CodeBlock></CodeBlock>
-            <h1>. If you have multiple SSH keys, Git might be using the wrong key. You can check which key Git is using with:
+        
+            <h1>. If you have multiple SSH keys, Git might be using the wrong key. You can check which key Git is using with:</h1>
             <h1>Setting Up Multiple Keys for Different Repositories, Here's an example of how you can set up your ~/.ssh/config file with different SSH keys for various Git repositories, using specific host entries for each:</h1>
-            <p>
-            # Default GitHub key
+
+            <CodeBlock>touch ~/.ssh/config</CodeBlock>
+            <CodeBlock>open ~/.ssh/config</CodeBlock>
+            <p>paste the following to config file</p>
+            <CodeBlock>{`# Default GitHub key
 Host github.com
   HostName github.com
   User git
@@ -30,20 +33,23 @@ Host github.com
 Host github.com
   HostName github.com
   User git
-  IdentityFile ~/.ssh/id_ed25519_4
+  IdentityFile ~/.ssh/id_ed25519_4`}
+  </CodeBlock>
+          and then run the following, one by one:
+           
+            <CodeBlock>chmod 600 ~/.ssh/id_ed25519</CodeBlock>
+            <CodeBlock>chmod 600 ~/.ssh/id_ed25519_2</CodeBlock>
+            <CodeBlock>chmod 600 ~/.ssh/id_ed25519_3</CodeBlock>
+            <CodeBlock>chmod 600 ~/.ssh/id_ed25519_4</CodeBlock>
 
-            </p>
-            
-            <CodeBlock>chmod 600 ~/.ssh/id_ed25519
-chmod 600 ~/.ssh/id_ed25519_2
-chmod 600 ~/.ssh/id_ed25519_3
-chmod 600 ~/.ssh/id_ed25519_4</CodeBlock>
-</h1>
-<CodeBlock>ssh -T git@github.com</CodeBlock>
+        now, test if successfully working:
         <CodeBlock>ssh -T git@github.com</CodeBlock>
+        you will see something like this:
         <CodeBlock>Hi username! You've successfully authenticated, but GitHub does not provide shell access.
         </CodeBlock>
-        <p>If you want Git to use a specific key, you can set up an SSH config file (~/.ssh/config) to ensure it uses the correct one for the repository.</p>
+        <h1>Now, to assign the project</h1>
+        <CodeBlock>git remote set-url origin github-fourth-account:chrstphrvllrn/PendukoBeatsServer.git</CodeBlock>
+
             https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
             <h1 className='text-xl'>How to push the update</h1>
             <CodeBlock language='command-line'>{`How to push the update to github
