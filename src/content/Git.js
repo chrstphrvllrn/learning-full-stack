@@ -48,7 +48,39 @@ Password for 'https://github.com/chrstphrvllrn/Learning/': generated token here`
             <h1>Adding the project to the existing empty repository</h1>
             <CodeBlock>git remote add origin https://github.com/USERNAME/REPOSITORY-NAME.git</CodeBlock>
             now you can proceed with the git add. && git commit -m 'message' %% git push origin main    
-            
+            <h1>Usual GitIgnore</h1>
+            <CodeBlock>{`# Node.js dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime files
+.pids
+*.pid
+*.seed
+*.pid.lock
+
+# Environment files
+.env
+.env.local
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Editor settings
+.vscode/
+.idea/
+`}</CodeBlock>
 
         </div>
     )
