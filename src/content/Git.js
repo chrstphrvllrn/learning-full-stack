@@ -3,6 +3,9 @@ import CodeBlock from '../components/CodeBlock'
 function Git() {
     return (
         <div>
+            <h1>Each repo should have separate deploy keys, do not override the existing id_ed25519.pub</h1>
+            <CodeBlock></CodeBlock>
+
             https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
             <h1 className='text-xl'>How to push the update</h1>
             <CodeBlock language='command-line'>{`How to push the update to github
@@ -25,7 +28,7 @@ Password for 'https://github.com/chrstphrvllrn/Learning/': generated token here`
             <p>cd ~/.ssh </p>
             <p>2. Enter ls -al ~/.ssh to see if existing SSH keys are present.</p>
             <p>ssh-keygen -t ed25519 -C "your_email@example.com"</p>
-            <p>override</p>
+            <p>do not override</p>
             <p>cat id_ed25519.pub</p>
             <p>copy the result and go to repository/Settings/Deploy keys/Add deploy keys</p>
             <p>paste the copied value, and check the allow edit acess</p>
